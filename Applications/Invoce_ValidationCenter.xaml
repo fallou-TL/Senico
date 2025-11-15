@@ -1,9 +1,8 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Find_direction_basic" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umam="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umame="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umamm="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Models;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umm="clr-namespace:UiPath.MicrosoftOffice365.Models;assembly=UiPath.MicrosoftOffice365" xmlns:ummm="clr-namespace:UiPath.MicrosoftOffice365.Mail.Models;assembly=UiPath.MicrosoftOffice365" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Find_direction_basic" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uma="clr-namespace:UiPath.MicrosoftOffice365.Activities;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umam="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umame="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umamf="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Filters;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umamm="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail.Models;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umm="clr-namespace:UiPath.MicrosoftOffice365.Models;assembly=UiPath.MicrosoftOffice365" xmlns:ummm="clr-namespace:UiPath.MicrosoftOffice365.Mail.Models;assembly=UiPath.MicrosoftOffice365" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_di_config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_o365m_mailAttachements" Type="InArgument(ummm:O365AttachmentLocalItem[])" />
-    <x:Property Name="in_str_direction" Type="InArgument(x:String)" />
-    <x:Property Name="in_o365m_mailItem" Type="InArgument(umm:Office365Message)" />
+    <x:Property Name="in_dict_invoiceInformation" Type="InOutArgument(scg:Dictionary(x:String, s:String[]))" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -65,6 +64,17 @@
       <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Models</x:String>
       <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Enums</x:String>
       <x:String>UiPath.MicrosoftOffice365.Activities.Mail</x:String>
+      <x:String>UiPath.Platform</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Filters</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Mail.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Filters</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Utilities</x:String>
+      <x:String>UiPath.Productivity.Activities.Diagnostics</x:String>
+      <x:String>UiPath.Productivity.Activities.Persistence</x:String>
+      <x:String>UiPath.Sdk.Activities</x:String>
+      <x:String>UiPath.Sdk.Activities.DependencyInjection.Contracts</x:String>
+      <x:String>UiPath.Sdk.Activities.DependencyInjection</x:String>
+      <x:String>UiPath.Shared.Services.Graph.Mail.Contracts</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -135,18 +145,27 @@
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Find_direction_basic" sap:VirtualizedContainerService.HintSize="890,1091" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Find_direction_basic" sap:VirtualizedContainerService.HintSize="890,2165" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="468,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start Uplaod SharePoint Attachement&quot;]" />
-    <Sequence DisplayName="Seq | Upload SharePoint Attachements" sap:VirtualizedContainerService.HintSize="468,731" sap2010:WorkflowViewState.IdRef="Sequence_14">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="604,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start Invocie Validator&quot;]" />
+    <Sequence DisplayName="Seq | Upload SharePoint Attachements" sap:VirtualizedContainerService.HintSize="604,1805" sap2010:WorkflowViewState.IdRef="Sequence_14">
       <Sequence.Variables>
         <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="enum_adress" />
+        <Variable x:TypeArguments="scg:List(x:String)" Name="li_missingFieldsList" />
+        <Variable x:TypeArguments="x:String" Name="str_bodyMail" />
+        <Variable x:TypeArguments="x:String" Name="str_subjectMail" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="enum_adressCC" />
+        <Variable x:TypeArguments="umm:Office365Message" Name="o365m_validationReceptMail" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -154,15 +173,55 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_2">
-        <Assign.To>
-          <OutArgument x:TypeArguments="scg:IEnumerable(x:String)">[enum_adress]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="scg:IEnumerable(x:String)">[CType(in_di_config("MailValidator"), String).Split(","c).Select(Function(s) s.Trim()).Where(Function(s) Not String.IsNullOrWhiteSpace(s)).ToArray()]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID0}" ReplyTo="{x:Null}" Subject="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Existing" AuthScopesInvalid="False" ConnectionId="777d96cf-3847-4e26-8cd4-50c8821ba953" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="434,525" sap2010:WorkflowViewState.IdRef="SendMailConnections_1" Importance="Normal" InputType="HTML" SaveAsDraft="True" To="[enum_adress]" UseConnectionService="True" UseSharedMailbox="False">
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="570,272" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="scg:List(x:String)">[li_missingFieldsList]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="scg:List(x:String)">[in_dict_invoiceInformation.Where(Function(kvp) kvp.Value(0).ToString.Trim = "" OrElse CDbl(kvp.Value(1)) &lt; CDbl(in_di_config("Document_confidence").ToString)).Select(Function(kvp) kvp.Key &amp; " : XXXXX").ToList()]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[str_bodyMail]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String" xml:space="preserve">[in_di_config("MailValidatorBody").ToString + 
+Environment.NewLine + String.Join(vbCrLf, li_missingFieldsList) +
+Environment.NewLine + in_di_config("MailValidatorSignature").ToString]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[str_subjectMail]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">[in_di_config("MailValidatorSubject").ToString + in_dict_invoiceInformation("Numéro facture")(0).ToString]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="scg:IEnumerable(x:String)">[enum_adress]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="scg:IEnumerable(x:String)">[CType(in_di_config("MailValidatorAdress"), String).Split(","c).Select(Function(s) s.Trim()).Where(Function(s) Not String.IsNullOrWhiteSpace(s)).ToArray()]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="scg:IEnumerable(x:String)">[enum_adressCC]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="scg:IEnumerable(x:String)">[CType(in_di_config("MailValidatorAdressCC"), String).Split(","c).Select(Function(s) s.Trim()).Where(Function(s) Not String.IsNullOrWhiteSpace(s)).ToArray()]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+          </scg:List>
+        </ui:MultipleAssign.AssignOperations>
+      </ui:MultipleAssign>
+      <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" AttachmentPaths="{x:Null}" Bcc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID0}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Existing" Attachments="[in_o365m_mailAttachements]" AuthScopesInvalid="False" Body="[str_bodyMail]" Cc="[enum_adressCC]" ConnectionId="777d96cf-3847-4e26-8cd4-50c8821ba953" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="570,434" sap2010:WorkflowViewState.IdRef="SendMailConnections_1" Importance="[UiPath.MicrosoftOffice365.Activities.Mail.Enums.Importance.High]" InputType="HTML" SaveAsDraft="True" Subject="[str_subjectMail]" To="[enum_adress]" UseConnectionService="True" UseSharedMailbox="False">
         <umam:SendMailConnections.AttachmentsBackup>
           <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Existing">
             <usau:BackupSlot.BackupValues>
@@ -170,9 +229,6 @@
             </usau:BackupSlot.BackupValues>
           </usau:BackupSlot>
         </umam:SendMailConnections.AttachmentsBackup>
-        <umam:SendMailConnections.Body>
-          <InArgument x:TypeArguments="x:String" />
-        </umam:SendMailConnections.Body>
         <umam:SendMailConnections.InputTypeBackup>
           <usau:BackupSlot x:TypeArguments="umame:BodyInputType" StoredValue="HTML">
             <usau:BackupSlot.BackupValues>
@@ -192,7 +248,99 @@
           </umamm:MailboxArgument>
         </umam:SendMailConnections.MailboxArg>
       </umam:SendMailConnections>
+      <uma:WaitForEmailReceived ConnectionAccountName="{x:Null}" JobData="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID1}" AuthScopesInvalid="False" ConnectionId="777d96cf-3847-4e26-8cd4-50c8821ba953" DisplayName="Wait for Email Received and Resume" sap:VirtualizedContainerService.HintSize="570,281" sap2010:WorkflowViewState.IdRef="WaitForEmailReceived_1" IncludeAttachments="False" MarkAsRead="False" UseConnectionService="True" UseSharedMailbox="False" WithAttachmentsOnly="False">
+        <uma:WaitForEmailReceived.Filter>
+          <umamf:MailFilterWithVariablesCollection LogicalOperator="And">
+            <umamf:MailFilterWithVariablesCollection.Filters>
+              <umamf:MailFilterElementWithVariables ImportanceValuesList="{x:Null}" ArrayStringOperator="Contains" BodyOperator="Contains" Criteria="Subject" ImportanceOperator="Equals" InStringValue="[str_subjectMail]" StringOperator="Contains" TypeOperator="Equals" TypeValue="Email" />
+            </umamf:MailFilterWithVariablesCollection.Filters>
+          </umamf:MailFilterWithVariablesCollection>
+        </uma:WaitForEmailReceived.Filter>
+        <uma:WaitForEmailReceived.MailFolderArgument>
+          <umamm:MailFolderArgument ConnectionDescriptor="{x:Null}" ManualEntryFolder="{x:Null}" BrowserFolder="Boîte de réception" BrowserFolderId="AQMkAGFlYjNhZWY1LTAyNGUtNDJmNy05MTMyLWYzYjg1YTkwM2RhZAAuAAADig9d3HW-mkCjbdYv3U1-CQEAa8ETsFLrYUGnztsZp81LEgAAAgEMAAAA" ConnectionKey="777d96cf-3847-4e26-8cd4-50c8821ba953" SelectionMode="Browse">
+            <umamm:MailFolderArgument.Backup>
+              <usau:BackupSlot x:TypeArguments="umame:ItemSelectionMode" StoredValue="Browse">
+                <usau:BackupSlot.BackupValues>
+                  <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="2">
+                    <InArgument x:TypeArguments="x:String">Boîte de réception</InArgument>
+                    <x:String>AQMkAGFlYjNhZWY1LTAyNGUtNDJmNy05MTMyLWYzYjg1YTkwM2RhZAAuAAADig9d3HW-mkCjbdYv3U1-CQEAa8ETsFLrYUGnztsZp81LEgAAAgEMAAAA</x:String>
+                  </scg:List>
+                  <scg:List x:TypeArguments="x:Object" x:Key="EnterPath" Capacity="1">
+                    <InArgument x:TypeArguments="x:String">reception</InArgument>
+                  </scg:List>
+                </usau:BackupSlot.BackupValues>
+              </usau:BackupSlot>
+            </umamm:MailFolderArgument.Backup>
+          </umamm:MailFolderArgument>
+        </uma:WaitForEmailReceived.MailFolderArgument>
+        <uma:WaitForEmailReceived.MailboxArg>
+          <umamm:MailboxArgument SharedMailbox="{x:Null}" UseSharedMailbox="False">
+            <umamm:MailboxArgument.Backup>
+              <usau:BackupSlot x:TypeArguments="umame:MailboxSelectionMode" x:Name="__ReferenceID1" StoredValue="NoMailbox">
+                <usau:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="umame:MailboxSelectionMode, scg:List(x:Object)" />
+                </usau:BackupSlot.BackupValues>
+              </usau:BackupSlot>
+            </umamm:MailboxArgument.Backup>
+          </umamm:MailboxArgument>
+        </uma:WaitForEmailReceived.MailboxArg>
+      </uma:WaitForEmailReceived>
+      <If Condition="[o365m_validationReceptMail.Body IsNot Nothing]" sap:VirtualizedContainerService.HintSize="570,726" sap2010:WorkflowViewState.IdRef="If_1">
+        <If.Then>
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="536,476" sap2010:WorkflowViewState.IdRef="Sequence_16">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="str_bodyValidatorMail" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="502,114" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[str_bodyValidatorMail]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[o365m_validationReceptMail.Body.ToString]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="502,302" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[li_missingFieldsList]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="x:String">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_3">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[in_dict_invoiceInformation(currentText)(0)]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[Regex.Match(str_bodyValidatorMail, "(?&lt;=" &amp; currentText &amp; "\s*:\s*).+").Value]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+            </ui:ForEach>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_18">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </If.Else>
+      </If>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="468,164" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;## End Uplaod SharePoint Attachement&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="604,164" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;## End Invocie Validator&quot;]" />
   </Sequence>
 </Activity>
