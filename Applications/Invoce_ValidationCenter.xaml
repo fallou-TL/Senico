@@ -151,14 +151,14 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Find_direction_basic" sap:VirtualizedContainerService.HintSize="890,2165" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Find_direction_basic" sap:VirtualizedContainerService.HintSize="890,2708" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="604,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start Invocie Validator&quot;]" />
-    <Sequence DisplayName="Seq | Upload SharePoint Attachements" sap:VirtualizedContainerService.HintSize="604,1805" sap2010:WorkflowViewState.IdRef="Sequence_14">
+    <Sequence DisplayName="Seq | Upload SharePoint Attachements" sap:VirtualizedContainerService.HintSize="604,2348" sap2010:WorkflowViewState.IdRef="Sequence_14">
       <Sequence.Variables>
         <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="enum_adress" />
         <Variable x:TypeArguments="scg:List(x:String)" Name="li_missingFieldsList" />
@@ -221,7 +221,7 @@ Environment.NewLine + in_di_config("MailValidatorSignature").ToString]</InArgume
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
-      <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" AttachmentPaths="{x:Null}" Bcc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID0}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Existing" Attachments="[in_o365m_mailAttachements]" AuthScopesInvalid="False" Body="[str_bodyMail]" Cc="[enum_adressCC]" ConnectionId="777d96cf-3847-4e26-8cd4-50c8821ba953" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="570,434" sap2010:WorkflowViewState.IdRef="SendMailConnections_1" Importance="[UiPath.MicrosoftOffice365.Activities.Mail.Enums.Importance.High]" InputType="HTML" SaveAsDraft="True" Subject="[str_subjectMail]" To="[enum_adress]" UseConnectionService="True" UseSharedMailbox="False">
+      <umam:SendMailConnections ArgumentAttachmentPaths="{x:Null}" AttachmentList="{x:Null}" AttachmentPaths="{x:Null}" Bcc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID0}" ReplyTo="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="Existing" Attachments="[in_o365m_mailAttachements]" AuthScopesInvalid="False" Body="[str_bodyMail]" Cc="[enum_adressCC]" ConnectionId="777d96cf-3847-4e26-8cd4-50c8821ba953" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="570,534" sap2010:WorkflowViewState.IdRef="SendMailConnections_1" Importance="[UiPath.MicrosoftOffice365.Activities.Mail.Enums.Importance.High]" InputType="HTML" SaveAsDraft="True" Subject="[str_subjectMail]" To="[enum_adress]" UseConnectionService="True" UseSharedMailbox="False">
         <umam:SendMailConnections.AttachmentsBackup>
           <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Existing">
             <usau:BackupSlot.BackupValues>
@@ -248,43 +248,92 @@ Environment.NewLine + in_di_config("MailValidatorSignature").ToString]</InArgume
           </umamm:MailboxArgument>
         </umam:SendMailConnections.MailboxArg>
       </umam:SendMailConnections>
-      <uma:WaitForEmailReceived ConnectionAccountName="{x:Null}" JobData="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID1}" AuthScopesInvalid="False" ConnectionId="777d96cf-3847-4e26-8cd4-50c8821ba953" DisplayName="Wait for Email Received and Resume" sap:VirtualizedContainerService.HintSize="570,281" sap2010:WorkflowViewState.IdRef="WaitForEmailReceived_1" IncludeAttachments="False" MarkAsRead="False" UseConnectionService="True" UseSharedMailbox="False" WithAttachmentsOnly="False">
-        <uma:WaitForEmailReceived.Filter>
-          <umamf:MailFilterWithVariablesCollection LogicalOperator="And">
-            <umamf:MailFilterWithVariablesCollection.Filters>
-              <umamf:MailFilterElementWithVariables ImportanceValuesList="{x:Null}" ArrayStringOperator="Contains" BodyOperator="Contains" Criteria="Subject" ImportanceOperator="Equals" InStringValue="[str_subjectMail]" StringOperator="Contains" TypeOperator="Equals" TypeValue="Email" />
-            </umamf:MailFilterWithVariablesCollection.Filters>
-          </umamf:MailFilterWithVariablesCollection>
-        </uma:WaitForEmailReceived.Filter>
-        <uma:WaitForEmailReceived.MailFolderArgument>
-          <umamm:MailFolderArgument ConnectionDescriptor="{x:Null}" ManualEntryFolder="{x:Null}" BrowserFolder="Boîte de réception" BrowserFolderId="AQMkAGFlYjNhZWY1LTAyNGUtNDJmNy05MTMyLWYzYjg1YTkwM2RhZAAuAAADig9d3HW-mkCjbdYv3U1-CQEAa8ETsFLrYUGnztsZp81LEgAAAgEMAAAA" ConnectionKey="777d96cf-3847-4e26-8cd4-50c8821ba953" SelectionMode="Browse">
+      <umam:GetEmailListConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" EmailList="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID1}" FreeTextFilter="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID2}" ManualEntryFolder="{x:Null}" QueryFilter="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" BrowserFolder="Inbox" BrowserFolderId="Inbox" ConnectionId="777d96cf-3847-4e26-8cd4-50c8821ba953" DisplayName="Get Email List" FilterSelectionMode="ConditionBuilder" sap:VirtualizedContainerService.HintSize="570,281" sap2010:WorkflowViewState.IdRef="GetEmailListConnections_1" Importance="Any" IncludeSubfolders="False" MarkAsRead="False" MaxResults="100" OrderByDate="NewestFirst" SelectionMode="Browse" UnreadOnly="False" UseConnectionService="True" UseSharedMailbox="False" WithAttachmentsOnly="False">
+        <umam:GetEmailListConnections.Filter>
+          <umamf:MailFilterCollection LogicalOperator="And">
+            <umamf:MailFilterCollection.Filters>
+              <umamf:MailFilterElement DateValue="{x:Null}" InStringValue="{x:Null}" Criteria="Subject" DateOperator="NewerThan" StringOperator="Contains" TypeOperator="Equals" TypeValue="Email" />
+            </umamf:MailFilterCollection.Filters>
+          </umamf:MailFilterCollection>
+        </umam:GetEmailListConnections.Filter>
+        <umam:GetEmailListConnections.FilterSelectionBackup>
+          <usau:BackupSlot x:TypeArguments="umame:FilterMode" StoredValue="ConditionBuilder">
+            <usau:BackupSlot.BackupValues>
+              <scg:Dictionary x:TypeArguments="umame:FilterMode, scg:List(x:Object)" />
+            </usau:BackupSlot.BackupValues>
+          </usau:BackupSlot>
+        </umam:GetEmailListConnections.FilterSelectionBackup>
+        <umam:GetEmailListConnections.MailFolderArgument>
+          <umamm:MailFolderArgument ConnectionDescriptor="{x:Null}" ManualEntryFolder="{x:Null}" BrowserFolder="Inbox" BrowserFolderId="Inbox" ConnectionKey="777d96cf-3847-4e26-8cd4-50c8821ba953" SelectionMode="Browse">
             <umamm:MailFolderArgument.Backup>
-              <usau:BackupSlot x:TypeArguments="umame:ItemSelectionMode" StoredValue="Browse">
+              <usau:BackupSlot x:TypeArguments="umame:ItemSelectionMode" x:Name="__ReferenceID1" StoredValue="Browse">
                 <usau:BackupSlot.BackupValues>
-                  <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="2">
-                    <InArgument x:TypeArguments="x:String">Boîte de réception</InArgument>
-                    <x:String>AQMkAGFlYjNhZWY1LTAyNGUtNDJmNy05MTMyLWYzYjg1YTkwM2RhZAAuAAADig9d3HW-mkCjbdYv3U1-CQEAa8ETsFLrYUGnztsZp81LEgAAAgEMAAAA</x:String>
-                  </scg:List>
-                  <scg:List x:TypeArguments="x:Object" x:Key="EnterPath" Capacity="1">
-                    <InArgument x:TypeArguments="x:String">reception</InArgument>
-                  </scg:List>
+                  <scg:Dictionary x:TypeArguments="umame:ItemSelectionMode, scg:List(x:Object)" />
                 </usau:BackupSlot.BackupValues>
               </usau:BackupSlot>
             </umamm:MailFolderArgument.Backup>
           </umamm:MailFolderArgument>
-        </uma:WaitForEmailReceived.MailFolderArgument>
-        <uma:WaitForEmailReceived.MailboxArg>
+        </umam:GetEmailListConnections.MailFolderArgument>
+        <umam:GetEmailListConnections.MailboxArg>
           <umamm:MailboxArgument SharedMailbox="{x:Null}" UseSharedMailbox="False">
             <umamm:MailboxArgument.Backup>
-              <usau:BackupSlot x:TypeArguments="umame:MailboxSelectionMode" x:Name="__ReferenceID1" StoredValue="NoMailbox">
+              <usau:BackupSlot x:TypeArguments="umame:MailboxSelectionMode" x:Name="__ReferenceID2" StoredValue="NoMailbox">
                 <usau:BackupSlot.BackupValues>
                   <scg:Dictionary x:TypeArguments="umame:MailboxSelectionMode, scg:List(x:Object)" />
                 </usau:BackupSlot.BackupValues>
               </usau:BackupSlot>
             </umamm:MailboxArgument.Backup>
           </umamm:MailboxArgument>
-        </uma:WaitForEmailReceived.MailboxArg>
-      </uma:WaitForEmailReceived>
+        </umam:GetEmailListConnections.MailboxArg>
+      </umam:GetEmailListConnections>
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="570,443" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+        <ui:CommentOut.Body>
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,332" sap2010:WorkflowViewState.IdRef="Sequence_19">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uma:WaitForEmailReceived ConnectionAccountName="{x:Null}" JobData="{x:Null}" Mailbox="{x:Null}" MailboxBackup="{x:Reference __ReferenceID3}" AuthScopesInvalid="False" ConnectionId="777d96cf-3847-4e26-8cd4-50c8821ba953" DisplayName="Wait for Email Received and Resume" sap:VirtualizedContainerService.HintSize="382,272" sap2010:WorkflowViewState.IdRef="WaitForEmailReceived_1" IncludeAttachments="False" MarkAsRead="False" UseConnectionService="True" UseSharedMailbox="False" WithAttachmentsOnly="False">
+              <uma:WaitForEmailReceived.Filter>
+                <umamf:MailFilterWithVariablesCollection LogicalOperator="And">
+                  <umamf:MailFilterWithVariablesCollection.Filters>
+                    <umamf:MailFilterElementWithVariables ImportanceValuesList="{x:Null}" ArrayStringOperator="Contains" BodyOperator="Contains" Criteria="Subject" ImportanceOperator="Equals" InStringValue="[str_subjectMail]" StringOperator="Contains" TypeOperator="Equals" TypeValue="Email" />
+                  </umamf:MailFilterWithVariablesCollection.Filters>
+                </umamf:MailFilterWithVariablesCollection>
+              </uma:WaitForEmailReceived.Filter>
+              <uma:WaitForEmailReceived.MailFolderArgument>
+                <umamm:MailFolderArgument ConnectionDescriptor="{x:Null}" ManualEntryFolder="{x:Null}" BrowserFolder="Boîte de réception" BrowserFolderId="AQMkAGFlYjNhZWY1LTAyNGUtNDJmNy05MTMyLWYzYjg1YTkwM2RhZAAuAAADig9d3HW-mkCjbdYv3U1-CQEAa8ETsFLrYUGnztsZp81LEgAAAgEMAAAA" ConnectionKey="777d96cf-3847-4e26-8cd4-50c8821ba953" SelectionMode="Browse">
+                  <umamm:MailFolderArgument.Backup>
+                    <usau:BackupSlot x:TypeArguments="umame:ItemSelectionMode" StoredValue="Browse">
+                      <usau:BackupSlot.BackupValues>
+                        <scg:List x:TypeArguments="x:Object" x:Key="Browse" Capacity="2">
+                          <InArgument x:TypeArguments="x:String">Boîte de réception</InArgument>
+                          <x:String>AQMkAGFlYjNhZWY1LTAyNGUtNDJmNy05MTMyLWYzYjg1YTkwM2RhZAAuAAADig9d3HW-mkCjbdYv3U1-CQEAa8ETsFLrYUGnztsZp81LEgAAAgEMAAAA</x:String>
+                        </scg:List>
+                        <scg:List x:TypeArguments="x:Object" x:Key="EnterPath" Capacity="1">
+                          <InArgument x:TypeArguments="x:String">reception</InArgument>
+                        </scg:List>
+                      </usau:BackupSlot.BackupValues>
+                    </usau:BackupSlot>
+                  </umamm:MailFolderArgument.Backup>
+                </umamm:MailFolderArgument>
+              </uma:WaitForEmailReceived.MailFolderArgument>
+              <uma:WaitForEmailReceived.MailboxArg>
+                <umamm:MailboxArgument SharedMailbox="{x:Null}" UseSharedMailbox="False">
+                  <umamm:MailboxArgument.Backup>
+                    <usau:BackupSlot x:TypeArguments="umame:MailboxSelectionMode" x:Name="__ReferenceID3" StoredValue="NoMailbox">
+                      <usau:BackupSlot.BackupValues>
+                        <scg:Dictionary x:TypeArguments="umame:MailboxSelectionMode, scg:List(x:Object)" />
+                      </usau:BackupSlot.BackupValues>
+                    </usau:BackupSlot>
+                  </umamm:MailboxArgument.Backup>
+                </umamm:MailboxArgument>
+              </uma:WaitForEmailReceived.MailboxArg>
+            </uma:WaitForEmailReceived>
+          </Sequence>
+        </ui:CommentOut.Body>
+      </ui:CommentOut>
       <If Condition="[o365m_validationReceptMail.Body IsNot Nothing]" sap:VirtualizedContainerService.HintSize="570,726" sap2010:WorkflowViewState.IdRef="If_1">
         <If.Then>
           <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="536,476" sap2010:WorkflowViewState.IdRef="Sequence_16">

@@ -145,7 +145,7 @@
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Ai_document_classification" sap:VirtualizedContainerService.HintSize="890,2000" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Ai_document_classification" sap:VirtualizedContainerService.HintSize="890,1661" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="uisad:IDocumentData(uisaseib:Invoices)" Name="dd_extractedData" />
     </Sequence.Variables>
@@ -155,13 +155,13 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="581,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start Sage fetch Purshase Order &quot;]" />
-    <Sequence DisplayName="Seq | Extract Document" sap:VirtualizedContainerService.HintSize="581,1640" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence DisplayName="Seq | Extract Document" sap:VirtualizedContainerService.HintSize="581,1301" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisaseib:Invoices" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" ModernDocumentTypeId="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" ProjectVersionNumber="{x:Null}" Prompt="{x:Null}" RuntimeAssetPath="{x:Null}" RuntimeTenantUrl="{x:Null}" ApplyAutoValidation="False" DisplayName="Extract Document Data" DocType="invoices" ExtractionResults="[dd_extractedData]" FileInput="[LocalResource.FromPath(&quot;DownloadInvoce\\Modele Facture.pdf&quot;)]" GenerateData="True" sap:VirtualizedContainerService.HintSize="547,340" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_1" ProjectId="00000000-0000-0000-0000-000000000000" TimeoutInSeconds="3600">
+      <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisaseib:Invoices" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" ModernDocumentTypeId="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" ProjectVersionNumber="{x:Null}" Prompt="{x:Null}" RuntimeAssetPath="{x:Null}" RuntimeTenantUrl="{x:Null}" ApplyAutoValidation="False" DisplayName="Extract Document Data" DocType="invoices" ExtractionResults="[dd_extractedData]" FileInput="[LocalResource.FromPath(in_str_localPath)]" GenerateData="True" sap:VirtualizedContainerService.HintSize="547,340" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_1" ProjectId="00000000-0000-0000-0000-000000000000" TimeoutInSeconds="3600">
         <p:ExtractDocumentDataWithDocumentData.AutoValidationConfidenceThreshold>
           <InArgument x:TypeArguments="s:Nullable(x:Int32)">
             <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="0" />
@@ -176,7 +176,7 @@
           </InArgument>
         </p:ExtractDocumentDataWithDocumentData.ProjectTag>
       </p:ExtractDocumentDataWithDocumentData>
-      <If Condition="[dd_extractedData.Data IsNot Nothing]" DisplayName="If | Extractor find data ?" sap:VirtualizedContainerService.HintSize="547,1208" sap2010:WorkflowViewState.IdRef="If_1">
+      <If Condition="[dd_extractedData.Data IsNot Nothing]" DisplayName="If | Extractor find data ?" sap:VirtualizedContainerService.HintSize="547,869" sap2010:WorkflowViewState.IdRef="If_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -184,7 +184,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="513,874" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="513,535" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -203,157 +203,201 @@
                   </ui:AssignOperation>
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
                     <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("Numéro facture")(0)]</OutArgument>
+                      <OutArgument x:TypeArguments="s:String[]">[out_dict_invoiceInformation("Numéro facture")]</OutArgument>
                     </ui:AssignOperation.To>
                     <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.InvoiceNumber.Value.ToString]</InArgument>
+                      <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[New String() {
+    dd_extractedData.Data.InvoiceNumber.Value.ToString(),
+    dd_extractedData.Data.InvoiceNumber.Confidence.ToString()
+}]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
                     <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("Nom fournisseur")(0)]</OutArgument>
+                      <OutArgument x:TypeArguments="s:String[]">[out_dict_invoiceInformation("Nom fournisseur")]</OutArgument>
                     </ui:AssignOperation.To>
                     <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.VendorName.Value.ToString]</InArgument>
+                      <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[New String() {
+    dd_extractedData.Data.VendorName.Value.ToString(),
+    dd_extractedData.Data.VendorName.Confidence.ToString()
+}]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
                     <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("Date facture ")(0)]</OutArgument>
+                      <OutArgument x:TypeArguments="s:String[]">[out_dict_invoiceInformation("Date facture ")]</OutArgument>
                     </ui:AssignOperation.To>
                     <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.DocumentDate.Value.ToString]</InArgument>
+                      <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[New String() {
+    dd_extractedData.Data.DocumentDate.Value.ToString(),
+    dd_extractedData.Data.DocumentDate.Confidence.ToString()
+}]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
                     <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("NINEA")(0)]</OutArgument>
+                      <OutArgument x:TypeArguments="s:String[]">[out_dict_invoiceInformation("NINEA")]</OutArgument>
                     </ui:AssignOperation.To>
                     <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.SWIFTCode.Value.ToString]</InArgument>
+                      <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[New String() {
+    dd_extractedData.Data.SWIFTCode.Value.ToString(),
+    dd_extractedData.Data.SWIFTCode.Confidence.ToString()
+}]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
                     <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("Montant HT")(0)]</OutArgument>
+                      <OutArgument x:TypeArguments="s:String[]">[out_dict_invoiceInformation("Montant HT")]</OutArgument>
                     </ui:AssignOperation.To>
                     <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.NetAmount.Value.ToString]</InArgument>
+                      <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[New String() {
+    dd_extractedData.Data.NetAmount.Value.ToString(),
+    dd_extractedData.Data.NetAmount.Confidence.ToString()
+}]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
                     <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("Montant TVA")(0)]</OutArgument>
+                      <OutArgument x:TypeArguments="s:String[]">[out_dict_invoiceInformation("Montant TVA")]</OutArgument>
                     </ui:AssignOperation.To>
                     <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.TaxAmount.Value.ToString]</InArgument>
+                      <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[New String() {
+    dd_extractedData.Data.TaxAmount.Value.ToString(),
+    dd_extractedData.Data.TaxAmount.Confidence.ToString()
+}]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
                     <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("Montant TTC")(0)]</OutArgument>
+                      <OutArgument x:TypeArguments="s:String[]">[out_dict_invoiceInformation("Montant TTC")]</OutArgument>
                     </ui:AssignOperation.To>
                     <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.TotalAmount.Value.ToString]</InArgument>
+                      <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[New String() {
+    dd_extractedData.Data.TotalAmount.Value.ToString(),
+    dd_extractedData.Data.TotalAmount.Confidence.ToString()
+}]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
                     <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("N° Commande")(0)]</OutArgument>
+                      <OutArgument x:TypeArguments="s:String[]">[out_dict_invoiceInformation("N° Commande")]</OutArgument>
                     </ui:AssignOperation.To>
                     <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.PurchaseOrderNumber.Value.ToString]</InArgument>
+                      <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[New String() {
+    dd_extractedData.Data.PurchaseOrderNumber.Value.ToString(),
+    dd_extractedData.Data.PurchaseOrderNumber.Confidence.ToString()
+}]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
                     <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("Devise")(0)]</OutArgument>
+                      <OutArgument x:TypeArguments="s:String[]">[out_dict_invoiceInformation("Devise")]</OutArgument>
                     </ui:AssignOperation.To>
                     <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.Currency.Value.ToString]</InArgument>
+                      <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[New String() {
+    dd_extractedData.Data.Currency.Value.ToString(),
+    dd_extractedData.Data.Currency.Confidence.ToString()
+}]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
             </ui:MultipleAssign>
-            <ui:MultipleAssign DisplayName="Assign extracted data Confidence to a out Dictionary" sap:VirtualizedContainerService.HintSize="479,387" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
-              <ui:MultipleAssign.AssignOperations>
-                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
-                    <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("Numéro facture")(1)]</OutArgument>
-                    </ui:AssignOperation.To>
-                    <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.InvoiceNumber.Confidence.ToString]</InArgument>
-                    </ui:AssignOperation.Value>
-                  </ui:AssignOperation>
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
-                    <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("Nom fournisseur")(0)]</OutArgument>
-                    </ui:AssignOperation.To>
-                    <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.VendorName.Confidence.ToString]</InArgument>
-                    </ui:AssignOperation.Value>
-                  </ui:AssignOperation>
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
-                    <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("Date facture ")(0)]</OutArgument>
-                    </ui:AssignOperation.To>
-                    <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.DocumentDate.Confidence.ToString]</InArgument>
-                    </ui:AssignOperation.Value>
-                  </ui:AssignOperation>
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
-                    <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("NINEA")(0)]</OutArgument>
-                    </ui:AssignOperation.To>
-                    <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.SWIFTCode.Confidence.ToString]</InArgument>
-                    </ui:AssignOperation.Value>
-                  </ui:AssignOperation>
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
-                    <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("Montant HT")(0)]</OutArgument>
-                    </ui:AssignOperation.To>
-                    <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.NetAmount.Confidence.ToString]</InArgument>
-                    </ui:AssignOperation.Value>
-                  </ui:AssignOperation>
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
-                    <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("Montant TVA")(0)]</OutArgument>
-                    </ui:AssignOperation.To>
-                    <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.TaxAmount.Confidence.ToString]</InArgument>
-                    </ui:AssignOperation.Value>
-                  </ui:AssignOperation>
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
-                    <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("Montant TTC")(0)]</OutArgument>
-                    </ui:AssignOperation.To>
-                    <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.TotalAmount.Confidence.ToString]</InArgument>
-                    </ui:AssignOperation.Value>
-                  </ui:AssignOperation>
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_19">
-                    <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("N° Commande")(0)]</OutArgument>
-                    </ui:AssignOperation.To>
-                    <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.PurchaseOrderNumber.Confidence.ToString]</InArgument>
-                    </ui:AssignOperation.Value>
-                  </ui:AssignOperation>
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_20">
-                    <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("Devise")(0)]</OutArgument>
-                    </ui:AssignOperation.To>
-                    <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.Currency.Confidence.ToString]</InArgument>
-                    </ui:AssignOperation.Value>
-                  </ui:AssignOperation>
-                </scg:List>
-              </ui:MultipleAssign.AssignOperations>
-            </ui:MultipleAssign>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="479,48" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="513,447" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:MultipleAssign DisplayName="Assign extracted data Confidence to a out Dictionary" sap:VirtualizedContainerService.HintSize="479,387" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("Numéro facture")(1)]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.InvoiceNumber.Confidence.ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("Nom fournisseur")(0)]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.VendorName.Confidence.ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("Date facture ")(0)]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.DocumentDate.Confidence.ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("NINEA")(0)]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.SWIFTCode.Confidence.ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("Montant HT")(0)]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.NetAmount.Confidence.ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("Montant TVA")(0)]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.TaxAmount.Confidence.ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("Montant TTC")(0)]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.TotalAmount.Confidence.ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_19">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("N° Commande")(0)]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.PurchaseOrderNumber.Confidence.ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_20">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[out_dict_invoiceInformation("Devise")(0)]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[dd_extractedData.Data.Currency.Confidence.ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                  </ui:MultipleAssign>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
           </Sequence>
         </If.Then>
         <If.Else>

@@ -290,7 +290,7 @@
                                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sage_fetch_order - Invoke Workflow File (Applications\Sage_fetch_order.xaml)" sap:VirtualizedContainerService.HintSize="502,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Applications\Sage_fetch_order.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
                                               <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_dict_Config">[in_di_config]</InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="out_str_requester">[str_requester]</InArgument>
+                                              <OutArgument x:TypeArguments="x:String" x:Key="out_str_requester">[str_requester]</OutArgument>
                                               <InArgument x:TypeArguments="x:String" x:Key="in_str_invoceNumber">[dict_invoceInformation("Numéro facture")(0).ToString]</InArgument>
                                             </ui:InvokeWorkflowFile.Arguments>
                                           </ui:InvokeWorkflowFile>

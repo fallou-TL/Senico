@@ -161,14 +161,17 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Ai_document_classification" sap:VirtualizedContainerService.HintSize="890,1984" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Ai_document_classification" sap:VirtualizedContainerService.HintSize="890,2960" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="str_fournisseurList" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start Sage fetch Supplier &quot;]" />
-    <Sequence DisplayName="Seq | Classifiy Document" sap:VirtualizedContainerService.HintSize="518,1624" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="620,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start Sage fetch Supplier &quot;]" />
+    <Sequence DisplayName="Seq | Classifiy Document" sap:VirtualizedContainerService.HintSize="620,2600" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="str_useNameSage" />
         <Variable x:TypeArguments="ss:SecureString" Name="str_passwordSecureSage" />
@@ -179,7 +182,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="586,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
         <ui:CommentOut.Body>
           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,226" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <sap:WorkflowViewStateService.ViewState>
@@ -197,8 +200,8 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="SageCredentials" CacheStrategy="None" DisplayName="Get Credential | SageUser" FolderPath="Shared" sap:VirtualizedContainerService.HintSize="484,175" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[str_passwordSecureSage]" Username="[str_useNameSage]" />
-      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="484,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="SageCredentials" CacheStrategy="None" DisplayName="Get Credential | SageUser" FolderPath="Shared" sap:VirtualizedContainerService.HintSize="586,175" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[str_passwordSecureSage]" Username="[str_useNameSage]" />
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="586,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -212,7 +215,7 @@
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="586,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
         <ui:CommentOut.Body>
           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
@@ -236,30 +239,30 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <Sequence DisplayName="Seq | navigation" sap:VirtualizedContainerService.HintSize="484,1095" sap2010:WorkflowViewState.IdRef="Sequence_9">
+      <Sequence DisplayName="Seq | navigation" sap:VirtualizedContainerService.HintSize="586,2071" sap2010:WorkflowViewState.IdRef="Sequence_9">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: {$title} (Administrateur des Ventes Export) (X3V12 / SENICO)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="450,1012" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsDisplayNameAuto="True" ScopeGuid="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V2">
+        <uix:NApplicationCard AttachMode="SingleWindow" DisplayName="Use Browser Chrome: {$title} (Administrateur des Ventes Export) (X3V12 / SENICO)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="552,1988" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" IsDisplayNameAuto="True" ScopeGuid="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V2">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,807" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="518,1783" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'compass'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,189" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'compass'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="484,189" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
                   <uix:NClick.Target>
                     <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="37931dc3-ff2d-406b-96c2-c41dc9fb4ed3" DesignTimeRectangle="1192, 158, 24, 25" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='compass' tag='I' /&gt;" Guid="db57e5d5-fc1e-4d2f-841c-d6ca2c3a18b4" InformativeScreenshot="4409f161ed034076da3078dde2ee76f8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='{$title} (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                   </uix:NClick.Target>
                 </uix:NClick>
-                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Base de données'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,189" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Base de données'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="484,189" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
                   <uix:NClick.Target>
                     <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="895d3d5e-faa4-40de-abdb-09817e3efb81" DesignTimeRectangle="64, 552, 192, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label='Données de base' parentid='sitemap-page' tag='A' /&gt;" Guid="d7e90aaf-165a-4d02-a6d9-c27cb1e3b344" InformativeScreenshot="2efcec2c40d188b1c4dca98b5f21dce4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fournisseur (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
                       <uix:TargetAnchorable.Anchors>
@@ -270,16 +273,54 @@
                     </uix:TargetAnchorable>
                   </uix:NClick.Target>
                 </uix:NClick>
-                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Fournisseurs'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,189" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Fournisseurs'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="484,189" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
                   <uix:NClick.Target>
                     <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="b39873a9-f6ca-46e1-aa6b-4a7f88deddd8" DesignTimeRectangle="964, 420, 84, 20" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label='Fournisseurs' tag='A' /&gt;" Guid="9377cff7-53e1-4b82-90ad-0a1f7bae416a" InformativeScreenshot="74d4f5aeaca678f8f7c861c2374854e5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fournisseur (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                   </uix:NClick.Target>
                 </uix:NClick>
-                <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[out_dt_fournissuer]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Fournisseur' ReferenceIdx='0' Name='Fournisseur'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Raison sociale' ReferenceIdx='1' Name='Raison sociale'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Intitulé court' ReferenceIdx='2' Name='Intitulé court'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='NINEA' ReferenceIdx='3' Name='NINEA'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Fournisseur' attr='fulltext' /&gt;&lt;column name='Raison sociale' attr='fulltext' /&gt;&lt;column name='Intitulé court' attr='fulltext' /&gt;&lt;column name='NINEA' attr='fulltext' /&gt;&lt;/extract-table&gt;" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,180" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                <uix:NCheckState DisplayName="Check App State 'OK'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="484,648" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                  <uix:NCheckState.IfExists>
+                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,240" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OK'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,180" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="98cb795d-ff30-486c-beb6-80a2aa823d3a" DesignTimeRectangle="818, 445, 68, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label='OK' tag='A' /&gt;" Guid="89fa2323-64af-4c9a-adae-7302cdb8ccab" InformativeScreenshot="f7355800c81067bff95ca5f70b51a49c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='{$title} (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                    </Sequence>
+                  </uix:NCheckState.IfExists>
+                  <uix:NCheckState.IfNotExists>
+                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,89" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </uix:NCheckState.IfNotExists>
+                  <uix:NCheckState.Target>
+                    <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="98cb795d-ff30-486c-beb6-80a2aa823d3a" DesignTimeRectangle="818, 445, 68, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label='OK' tag='A' /&gt;" Guid="40719243-1dac-4423-ae91-739967b931db" InformativeScreenshot="49e58a7cd1a434c9652f29bbe3450881.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='{$title} (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NCheckState.Target>
+                </uix:NCheckState>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Label'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="484,189" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="286c2284-a46f-4a38-8b9b-261961489472" DesignTimeRectangle="269, 232, 24, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='' parentid='s_app_body' tag='A' /&gt;" Guid="02a3c126-f401-483c-91ca-899b9173475f" InformativeScreenshot="0fb76a28ac7f759f4c3be994d6fab19e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fournisseur (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NClick.Target>
+                </uix:NClick>
+                <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[out_dt_fournissuer]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Fournisseur' ReferenceIdx='0' Name='Fournisseur'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Raison sociale' ReferenceIdx='1' Name='Raison sociale'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Intitulé court' ReferenceIdx='2' Name='Intitulé court'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='NINEA' ReferenceIdx='3' Name='NINEA'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Fournisseur' attr='fulltext' /&gt;&lt;column name='Raison sociale' attr='fulltext' /&gt;&lt;column name='Intitulé court' attr='fulltext' /&gt;&lt;column name='NINEA' attr='fulltext' /&gt;&lt;/extract-table&gt;" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="484,189" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
                   <uix:NExtractData.Target>
-                    <uix:TargetAnchorable BrowserURL="http://192.168.6.12:8124/syracuse-main/html/main.html?url=%2Ftrans%2Fx3%2Ferp%2FX3V12_SENICO%2F%24sessions%3Ff%3DGESBPS%252F2%252F%252FM%252F%26profile%3D~(loc~%27fr-FR~role~%27bc2d3ce2-2797-4473-9299-fa9860a5a43b~ep~%272aacf4a8-fc5e-4051-a723-d48bf282e6cf~appConn~())" DesignTimeRectangle="22, 233, 1235, 57" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;" Guid="5d8d8e34-e358-4b02-975b-3283cd59dc40" InformativeScreenshot="56cbaa735503733a8846d6ba6c69f29d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fournisseur (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    <uix:TargetAnchorable BrowserURL="http://192.168.6.12:8124/syracuse-main/html/main.html?url=%2Ftrans%2Fx3%2Ferp%2FX3V12_SENICO%2F%24sessions%3Ff%3DGESBPS%252F2%252F%252FM%252F%26profile%3D~(loc~%27fr-FR~role~%27bc2d3ce2-2797-4473-9299-fa9860a5a43b~ep~%272aacf4a8-fc5e-4051-a723-d48bf282e6cf~appConn~())" DesignTimeRectangle="22, 233, 1235, 57" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;" Guid="66cd94af-faa7-43a7-b345-d5679f32be88" InformativeScreenshot="f9a522248dd71373a7f675cce9c63283.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fournisseur (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                   </uix:NExtractData.Target>
                 </uix:NExtractData>
+                <uix:NGetText DisplayName="Get Text 'FournisseurRaison so…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="484,130" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" ScrapingMethod="Fulltext" TextString="[str_fournisseurList]" Version="V5">
+                  <uix:NGetText.Target>
+                    <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" DesignTimeRectangle="8, 195, 1280, 565" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;article&amp;gt;div&amp;gt;div&amp;gt;article&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='s_app_body' tag='DIV' /&gt;" Guid="5cf4eaff-961b-44cd-b2e1-4e50d9b98031" InformativeScreenshot="8bc5ce09c3f0462fdddbef4a376d5cba.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fournisseur (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NGetText.Target>
+                </uix:NGetText>
               </Sequence>
             </ActivityAction>
           </uix:NApplicationCard.Body>
@@ -291,11 +332,18 @@
             </ActivityFunc>
           </uix:NApplicationCard.OCREngine>
           <uix:NApplicationCard.TargetApp>
-            <uix:TargetApp Area="-8, -8, 1296, 768" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEZSURBVDhPpZGxSgNBEIa/RoliI6QQSRpB0mkZxCLgC9gEG8FeS9uk9glsFGMrtuYNJKWFCAHNzF4QRUGwsVFi4OSW47zsZpHD4i/2m5mPnV3iOOY/8UDReCArPLKIsINhnwF1nphze6YKiFhD6aGMUeJckvMlQiUo4IYZlNd04BnhHMMxyjXKp60ZVsMCYSMdHqFUJ2pKlYhanvmCB8oo31YidBAaDFhhSMkdnCqwQDl1dk/yhXKBsuX1u8BCoZmKegjvE7KI9T8FbrhnGeUulZwEBfSZRehiOEp+JOMvzCPcWoHhLCwQDnPX/bArGK5Q3jIubAcFFhh2vb1/H7Ll9bvAwj4LKJsIByhtlD2GLLl9QUGReKBofgByX3aZ66j3iQAAAABJRU5ErkJggg==" InformativeScreenshot="356cb2a60b3374260113fb6c8c4433e1.jpg" Selector="&lt;html app='chrome.exe' title='{$title} (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" Url="http://192.168.6.12:8124/syracuse-main/html/main.html?url=%3Frepresentation%3Dhome.%2524landing%26profile%3D~(loc~%27fr-FR~role~%27bc2d3ce2-2797-4473-9299-fa9860a5a43b~ep~%272aacf4a8-fc5e-4051-a723-d48bf282e6cf~appConn~())" Version="V2" />
+            <uix:TargetApp Area="-8, -8, 1296, 768" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEZSURBVDhPpZGxSgNBEIa/RoliI6QQSRpB0mkZxCLgC9gEG8FeS9uk9glsFGMrtuYNJKWFCAHNzF4QRUGwsVFi4OSW47zsZpHD4i/2m5mPnV3iOOY/8UDReCArPLKIsINhnwF1nphze6YKiFhD6aGMUeJckvMlQiUo4IYZlNd04BnhHMMxyjXKp60ZVsMCYSMdHqFUJ2pKlYhanvmCB8oo31YidBAaDFhhSMkdnCqwQDl1dk/yhXKBsuX1u8BCoZmKegjvE7KI9T8FbrhnGeUulZwEBfSZRehiOEp+JOMvzCPcWoHhLCwQDnPX/bArGK5Q3jIubAcFFhh2vb1/H7Ll9bvAwj4LKJsIByhtlD2GLLl9QUGReKBofgByX3aZ66j3iQAAAABJRU5ErkJggg==" InformativeScreenshot="356cb2a60b3374260113fb6c8c4433e1.jpg" Selector="&lt;html app='chrome.exe' title='*(X3V12 / SENICO)*' /&gt;" Url="http://192.168.6.12:8124/syracuse-main/html/main.html*" Version="V2">
+              <uix:TargetApp.Arguments>
+                <InArgument x:TypeArguments="x:String" />
+              </uix:TargetApp.Arguments>
+              <uix:TargetApp.WorkingDirectory>
+                <InArgument x:TypeArguments="x:String" />
+              </uix:TargetApp.WorkingDirectory>
+            </uix:TargetApp>
           </uix:NApplicationCard.TargetApp>
         </uix:NApplicationCard>
       </Sequence>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,164" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;## End AIDocument Classification &quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="620,164" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;## End AIDocument Classification &quot;]" />
   </Sequence>
 </Activity>
