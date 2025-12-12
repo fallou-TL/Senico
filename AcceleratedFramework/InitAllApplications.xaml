@@ -280,7 +280,7 @@
               </umaf:GetFileListConnections.FilterSelectionBackup>
             </umaf:GetFileListConnections>
           </Sequence>
-          <Sequence DisplayName="Test Sage Connexion" sap:VirtualizedContainerService.HintSize="468,654" sap2010:WorkflowViewState.IdRef="Sequence_17">
+          <Sequence DisplayName="Test Sage Connexion" sap:VirtualizedContainerService.HintSize="468,654" sap2010:WorkflowViewState.IdRef="Sequence_19">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>

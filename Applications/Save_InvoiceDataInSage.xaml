@@ -127,7 +127,7 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Save_InvoiceDataInSage" sap:VirtualizedContainerService.HintSize="890,5427" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Save_InvoiceDataInSage" sap:VirtualizedContainerService.HintSize="890,5778" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_devise">
         <Variable.Default>
@@ -140,8 +140,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="620,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;## Start Sage save invoce &quot;]" />
-    <Sequence DisplayName="Seq | Check supplier" sap:VirtualizedContainerService.HintSize="620,5067" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="622,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;## Start Sage save invoce &quot;]" />
+    <Sequence DisplayName="Seq | Check supplier" sap:VirtualizedContainerService.HintSize="622,5418" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="str_useNameSage" />
         <Variable x:TypeArguments="ss:SecureString" Name="str_passwordSecureSage" />
@@ -161,7 +161,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="586,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="588,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
         <ui:CommentOut.Body>
           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_10">
             <sap:WorkflowViewStateService.ViewState>
@@ -186,7 +186,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="586,179" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="588,179" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -208,41 +208,41 @@
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
-      <Sequence DisplayName="Seq -1 | navigation" sap:VirtualizedContainerService.HintSize="586,4739" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <Sequence DisplayName="Seq -1 | navigation" sap:VirtualizedContainerService.HintSize="588,5090" sap2010:WorkflowViewState.IdRef="Sequence_5">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <uix:NApplicationCard AttachMode="SingleWindow" DisplayName="Use Browser Chrome: *(X3V12 / SENICO)*" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="552,4656" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsDisplayNameAuto="True" ScopeGuid="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V2">
+        <uix:NApplicationCard AttachMode="SingleWindow" DisplayName="Use Browser Chrome: *(X3V12 / SENICO)*" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="554,5007" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsDisplayNameAuto="True" ScopeGuid="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V2">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="518,4451" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="520,4802" sap2010:WorkflowViewState.IdRef="Sequence_4">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'compass'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="484,189" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'compass'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,189" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
                   <uix:NClick.Target>
                     <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="37931dc3-ff2d-406b-96c2-c41dc9fb4ed3" DesignTimeRectangle="1192, 158, 24, 25" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='compass' tag='I' /&gt;" Guid="db57e5d5-fc1e-4d2f-841c-d6ca2c3a18b4" InformativeScreenshot="4409f161ed034076da3078dde2ee76f8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='{$title} (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                   </uix:NClick.Target>
                 </uix:NClick>
-                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Achats'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="484,189" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Achats'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,189" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
                   <uix:NClick.Target>
                     <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="6f57a34c-9c89-429a-9de7-7124d0757e76" DesignTimeRectangle="64, 352, 192, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label='Achats' parentid='sitemap-page' tag='A' aaname='Achats' /&gt;" Guid="0217dec9-6e82-4ec9-9ce1-658d07e2d2b0" InformativeScreenshot="8995eb61e5f5ca0b075fe7cd7dd8f220.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Commande d&amp;apos;achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
                   </uix:NClick.Target>
                 </uix:NClick>
-                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Factures'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="484,189" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Factures'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,189" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
                   <uix:NClick.Target>
                     <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="88d5929e-10f9-4f79-a3aa-22ce42074d3b" DesignTimeRectangle="341, 516, 55, 20" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label='Factures' class='s_sitemap_menu_link' href='?url=%2Ftrans%2Fx3%2Ferp%2FX3V12_SENICO%2F%24sessions%3Ff%3DGESPIH%252F2%252F%252FM%252F' tag='A' aaname='Factures' /&gt;" Guid="0ecbf3f8-d04e-4e5f-b0bc-5045217f979e" InformativeScreenshot="afa516ead71f33e4c198edd92df34966.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Commande d&amp;apos;achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
                   </uix:NClick.Target>
                 </uix:NClick>
-                <uix:NCheckState DisplayName="Check App State 'OK'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="484,648" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                <uix:NCheckState DisplayName="Check App State 'OK'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="486,648" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
                   <uix:NCheckState.IfExists>
                     <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,240" sap2010:WorkflowViewState.IdRef="Sequence_7">
                       <sap:WorkflowViewStateService.ViewState>
@@ -270,12 +270,12 @@
                     <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="98cb795d-ff30-486c-beb6-80a2aa823d3a" DesignTimeRectangle="818, 445, 68, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label='OK' tag='A' /&gt;" Guid="40719243-1dac-4423-ae91-739967b931db" InformativeScreenshot="49e58a7cd1a434c9652f29bbe3450881.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='{$title} (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                   </uix:NCheckState.Target>
                 </uix:NCheckState>
-                <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="5" DisplayName="Click 'STD Standard'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="484,189" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="5" DisplayName="Click 'STD Standard'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,189" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
                   <uix:NClick.Target>
                     <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="1c7fa33c-3755-42cd-8711-68a444a4ddb9" DesignTimeRectangle="498, 337, 303, 22" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='s-grid-table-body' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='DIV' aaname='STD     Standard' /&gt;" Guid="83625781-6bc9-4fce-b0a8-ec7bed4c0466" InformativeScreenshot="8813c1e6012bd351dc5d642bb08f18a8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Commande d&amp;apos;achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
                   </uix:NClick.Target>
                 </uix:NClick>
-                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'refresh'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="484,189" sap2010:WorkflowViewState.IdRef="NClick_9" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'refresh'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,189" sap2010:WorkflowViewState.IdRef="NClick_9" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
                   <uix:NClick.Target>
                     <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="b59077db-2a26-40f0-ad86-afbc6540095b" DesignTimeRectangle="1258, 303, 24, 24" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;article&amp;gt;div&amp;gt;div&amp;gt;article&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;a' href='#' idx='6' parentid='s_app_body' tag='A' /&gt;" Guid="1d7e0a11-1f35-42d3-b3aa-8aa256d1ff5d" InformativeScreenshot="8d37e0b44f7be5409d0790a64f660f70.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Facture achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None">
                       <uix:TargetAnchorable.Anchors>
@@ -286,43 +286,43 @@
                     </uix:TargetAnchorable>
                   </uix:NClick.Target>
                 </uix:NClick>
-                <Sequence DisplayName="Seq-3 | Input data" sap:VirtualizedContainerService.HintSize="484,2798" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence DisplayName="Seq-3 | Input data" sap:VirtualizedContainerService.HintSize="486,3149" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Label'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NClick_10" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Label'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,189" sap2010:WorkflowViewState.IdRef="NClick_10" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="b59077db-2a26-40f0-ad86-afbc6540095b" DesignTimeRectangle="436, 368, 20, 25" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='layout-slot-7-65' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='A' matching:tag='fuzzy' fuzzylevel:tag='0.0' idx='430' /&gt;" Guid="ea9f14c4-7673-4d66-aea6-6ad084439bab" InformativeScreenshot="4b4a25734bc357c3af756f083aaa0743.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Facture achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="[UiPath.UIAutomationNext.Enums.NClickType.Double]" DelayBefore="5" DisplayName="Click 'SENI Sénégalaise d’indu…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NClick_17" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="[UiPath.UIAutomationNext.Enums.NMouseButton.Left]" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                  <uix:NClick ActivateBefore="True" ClickType="[UiPath.UIAutomationNext.Enums.NClickType.Double]" DelayBefore="5" DisplayName="Click 'SENI Sénégalaise d’indu…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,189" sap2010:WorkflowViewState.IdRef="NClick_17" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="[UiPath.UIAutomationNext.Enums.NMouseButton.Left]" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="41ce72f7-6783-4621-ad7e-fc53c4ceac6d" CvTextArea="353, 384, 228, 12" CvTextArgument="SENI Senegalaise d'industrie et de comm" CvType="Text" DesignTimeRectangle="353, 384, 228, 15" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='s-grid-table-body' parentid='layout-slot-40-3' tag='TABLE' /&gt;&lt;webctrl tag='DIV' aaname='SENI*' colName='SENI*' matching:colName='fuzzy' fuzzylevel:colName='0.0' /&gt;" Guid="39b6f13e-933c-4fc1-ad0d-08107bea7792" InformativeScreenshot="9efb5353ebe580affddd0a1758f8e05e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Facture achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Label'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NClick_18" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Label'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,189" sap2010:WorkflowViewState.IdRef="NClick_18" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="54904550-28f2-4ea2-954d-fd866edc7bb3" DesignTimeRectangle="580, 363, 20, 25" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='layout-slot-27-66' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='A' matching:tag='fuzzy' fuzzylevel:tag='0.0' idx='443' /&gt;" Guid="04859057-9ad3-41b0-8b2e-0c908b728b52" InformativeScreenshot="96f9f64e800648e6fbbeded6e9ab9fdd.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Facture achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="5" DisplayName="Click 'FAF'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NClick_13" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="5" DisplayName="Click 'FAF'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,189" sap2010:WorkflowViewState.IdRef="NClick_13" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="48106ee6-5682-4422-873d-d98ab4b2be1d" DesignTimeRectangle="262, 403, 188, 22" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl class='s-grid-table-body' parentid='layout-slot*' tag='TABLE' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' /&gt;&lt;webctrl type='' tag='DIV' class='s-inplace-value-read' aaname='FAF' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='FAF' /&gt;" Guid="dbab2391-246e-41b9-adac-24106d653d0d" InformativeScreenshot="b93235092758e193446b570b8f8031fc.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Facture achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Label'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NClick_14" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Label'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,189" sap2010:WorkflowViewState.IdRef="NClick_14" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="0eb47764-78d2-4ff1-b091-9823b2fbfce4" DesignTimeRectangle="511, 501, 20, 25" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='layout-slot-7-74' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='A' matching:tag='fuzzy' fuzzylevel:tag='0.0' idx='490' /&gt;" Guid="3b8f4d87-b895-4701-a25c-362485e2580b" InformativeScreenshot="fe47fb26040006198454c1e9a324d307.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Facture achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Fournisseur ID'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NClick_15" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Fournisseur ID'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,189" sap2010:WorkflowViewState.IdRef="NClick_15" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="c244eb89-aa5b-4091-b84b-393ade0889cc" DesignTimeRectangle="328, 472, 129, 22" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl class='s-grid-table-body' parentid='layout-slot*' tag='TABLE' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' /&gt;&lt;webctrl type='' tag='DIV' class='s-inplace-value-read' aaname='{0}' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='{0}' /&gt;&quot;, in__str_supplierID)]" Guid="732546fc-1df0-4e7d-a909-82f81c6f1de7" InformativeScreenshot="f2f96049dc2897ed8183cbda85142a06.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Facture achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
                     <ui:CommentOut.Body>
                       <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,291" sap2010:WorkflowViewState.IdRef="Sequence_9">
                         <sap:WorkflowViewStateService.ViewState>
@@ -344,7 +344,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:CommentOut>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Numero Facture'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,240" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="SameAsCard" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Text="[in_dict_invoiceInformation(&quot;Numéro facture&quot;)(0)]" Version="V5">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Numero Facture'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,240" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="SameAsCard" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Text="[in_dict_invoiceInformation(&quot;Numéro facture&quot;)(0)]" Version="V5">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="a8de94f2-dcb1-4c2f-ac23-b765659e2c8b" DesignTimeRectangle="485, 568, 190, 24" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='layout-slot-26-87' tag='INPUT' type='text' class='s-field-input' aaname='No fact.fou' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="d034dc6c-38fc-49c3-af57-65d24dc76c80" InformativeScreenshot="aec0826428b604caaca55667ffe50c1c.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Facture achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -355,7 +355,7 @@
                       </uix:TargetAnchorable>
                     </uix:NTypeInto.Target>
                   </uix:NTypeInto>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Select Devise'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NClick_19" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Select Devise'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,189" sap2010:WorkflowViewState.IdRef="NClick_19" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="a424b600-ebeb-4ee1-bfb3-0696134bb2a7" DesignTimeRectangle="421, 528, 20, 25" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='layout-slot-16-88' tag='A' type='' class='s-field-edit-picker s-fonticon-btn s-btn-lookup' aaname='' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='' /&gt;" Guid="a22ffb41-17be-43d9-9888-e9155255df04" InformativeScreenshot="20339dd934ef5780af827a9865456af1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Facture achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -366,12 +366,12 @@
                       </uix:TargetAnchorable>
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Devise'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NClick_20" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Devise'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,189" sap2010:WorkflowViewState.IdRef="NClick_20" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="a9a1e30e-d3ed-4125-8166-a349df9be24f" DesignTimeRectangle="473, 403, 50, 22" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl class='s-grid-table-body' parentid='layout-slot-*' tag='TABLE' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' /&gt;&lt;webctrl type='' tag='DIV' class='s-inplace-value-read' aaname='{0}' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='{0}' /&gt;&quot;, str_devise)]" Guid="408f9f52-f1cb-4029-aecc-92351a312961" InformativeScreenshot="d8def2dbd8120846ded420350f415c22.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Facture achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'TotalHT'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,240" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="SameAsCard" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Text="[in_dict_invoiceInformation(&quot;Montant HT&quot;)(0)]" Version="V5">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'TotalHT'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,240" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="SameAsCard" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Text="[in_dict_invoiceInformation(&quot;Montant HT&quot;)(0)]" Version="V5">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="2cad2150-b17d-4639-b4e9-a0adee5c7996" DesignTimeRectangle="774, 622, 165, 24" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='layout-slot-26-120' tag='INPUT' type='text' class='s-field-input s-field-input-num' aaname='Total HT lignes' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="a33fe569-db5f-48b8-b1cc-b48b0cc19dc4" InformativeScreenshot="0e4e05dab903c83e2d6454718da6e50d.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Facture achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -382,7 +382,7 @@
                       </uix:TargetAnchorable>
                     </uix:NTypeInto.Target>
                   </uix:NTypeInto>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Total Taxe'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,240" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="SameAsCard" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Text="[in_dict_invoiceInformation(&quot;Montant TVA&quot;)(0)]" Version="V5">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Total Taxe'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,240" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="SameAsCard" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Text="[in_dict_invoiceInformation(&quot;Montant TVA&quot;)(0)]" Version="V5">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="3552edbf-df68-4714-ac02-814ab541cb54" DesignTimeRectangle="963, 522, 165, 24" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='layout-slot-26-121' tag='INPUT' type='text' class='s-field-input s-field-input-num' aaname='Total des taxes' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="27a5ef23-3d36-4afc-ae97-87cfffd865e2" InformativeScreenshot="05840d68ef5cf238ee7b3d7f37801bfb.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Facture achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -393,17 +393,17 @@
                       </uix:TargetAnchorable>
                     </uix:NTypeInto.Target>
                   </uix:NTypeInto>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sélection commandes'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NClick_22" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sélection commandes'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,189" sap2010:WorkflowViewState.IdRef="NClick_22" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="e4879346-aab3-4a92-a6e9-2554f19ecea7" DesignTimeRectangle="20, 578, 266, 20" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Sélection commandes' class='s-fusion-bar-block-title' tag='A' type='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Sélection commandes' /&gt;" Guid="828a3b0c-68bb-4ed7-8776-9d8340b30241" InformativeScreenshot="b97bce2344ed20344b25536bdf366b4c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Facture achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'DMP022309POH00000002 _ …'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NClick_23" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'DMP022309POH00000002 _ …'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,189" sap2010:WorkflowViewState.IdRef="NClick_23" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="56bb348b-6283-46ad-95ff-72dfa5adc098" Version="V5">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="192.168.6.12/syracuse-main/html/main.html" CVScreenId="cc16ca24-a2aa-4434-971a-bd7faf116ac1" CvTextArea="61, 357, 225, 14" CvTextArgument="DMP022309POH00000002 01/09/2023" CvType="Text" DesignTimeRectangle="61, 350, 291, 27" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl class='s-grid-table-body' tag='TABLE' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;&lt;webctrl isleaf='1' type='' tag='DIV' class='s-inplace-value-read s-tree-node-desc-value' aaname=' _ 01/09/2023 _ BP001176' matching:isleaf='fuzzy' fuzzylevel:isleaf='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='DMP022309POH00000002 _ 01/09/2023 _ BP001176' /&gt;" Guid="a200b2aa-ca63-42cd-b7b8-14d3be0800c4" InformativeScreenshot="4b9cc14b42ba65743d52caa5d400ba2a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Facture achat STD : Standard (Administrateur des Ventes Export) (X3V12 / SENICO)' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                  <ui:CommentOut sap2010:Annotation.AnnotationText="Champs non disponible actuellement avec extracteur&#xD;&#xA;&#xD;&#xA;Note : (A modifier)" DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="452,399" sap2010:WorkflowViewState.IdRef="CommentOut_3">
                     <ui:CommentOut.Body>
                       <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,240" sap2010:WorkflowViewState.IdRef="Sequence_11">
                         <sap:WorkflowViewStateService.ViewState>
@@ -426,8 +426,9 @@
                     </ui:CommentOut.Body>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:CommentOut>
@@ -455,6 +456,6 @@
         </uix:NApplicationCard>
       </Sequence>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="620,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start Sage save invoce &quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="622,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start Sage save invoce &quot;]" />
   </Sequence>
 </Activity>

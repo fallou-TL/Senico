@@ -146,7 +146,7 @@
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Ai_document_classification" sap:VirtualizedContainerService.HintSize="890,1713" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Ai_document_classification" sap:VirtualizedContainerService.HintSize="890,1902" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="uisad:IDocumentData(uisaseib:Invoices)" Name="dd_extractedData" />
     </Sequence.Variables>
@@ -156,7 +156,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="581,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;## Start Sage fetch Purshase Order &quot;]" />
-    <Sequence DisplayName="Seq | Extract Document" sap:VirtualizedContainerService.HintSize="581,1353" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence DisplayName="Seq | Extract Document" sap:VirtualizedContainerService.HintSize="581,1542" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -209,7 +209,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <If Condition="[dd_extractedData.Data IsNot Nothing]" DisplayName="If | Extractor find data ?" sap:VirtualizedContainerService.HintSize="547,864" sap2010:WorkflowViewState.IdRef="If_1">
+      <If Condition="[dd_extractedData.Data IsNot Nothing]" DisplayName="If | Extractor find data ?" sap:VirtualizedContainerService.HintSize="547,1053" sap2010:WorkflowViewState.IdRef="If_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -217,13 +217,13 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="513,530" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="513,719" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="479,57" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+            <ui:CommentOut sap2010:Annotation.AnnotationText="ICI c'est extraction avec tous les champs demander sur le PDD&#xD;&#xA;Note (A Modifier) : tous les champs ne sont pas disponible avec la nouvelle liecense community" DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="479,174" sap2010:WorkflowViewState.IdRef="CommentOut_3">
               <ui:CommentOut.Body>
                 <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="513,509" sap2010:WorkflowViewState.IdRef="Sequence_10">
                   <sap:WorkflowViewStateService.ViewState>
@@ -355,10 +355,11 @@
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:CommentOut>
-            <ui:MultipleAssign DisplayName="Assign extracted data Value to a out Dictionary" sap:VirtualizedContainerService.HintSize="479,365" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+            <ui:MultipleAssign sap2010:Annotation.AnnotationText="ICI c'est les champs disponible avec lors de l'extraction&#xD;&#xA;&#xD;&#xA;Et pour la suite , j'utilise le Numero de Facture comme le bon de commade dans les test" DisplayName="Assign extracted data Value to a out Dictionary" sap:VirtualizedContainerService.HintSize="479,437" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_22">
@@ -445,6 +446,11 @@
                   </ui:AssignOperation>
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ui:MultipleAssign>
             <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="479,48" sap2010:WorkflowViewState.IdRef="CommentOut_1">
               <ui:CommentOut.Body>
